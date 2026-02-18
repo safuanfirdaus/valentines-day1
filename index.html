@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Valentines Day Hanni Shafeera ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ff9a9e, #fecfef);
+      text-align: center;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      color: white;
+    }
+
+    h1 {
+      margin-top: 80px;
+      font-size: 50px;
+      text-shadow: 2px 2px 5px #ff4d6d;
+    }
+
+    p {
+      font-size: 22px;
+    }
+
+    .gallery img, .gallery video {
+      width: 250px;
+      margin: 10px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      margin: 15px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background-color: white;
+      color: #ff4d6d;
+      position: absolute;
+    }
+
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: red;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <h1>Hanni Shafeera ❤️</h1>
+  <p>You are my fav person baby love 💕</p>
+  <p>Sweet tak i 👇</p>
+I HOPE THAT OUR RELATIONSHIP KEKAL SAMPAI BILA-BILA THANKS FOR ALWAYS BE THERE FOR ME!!
+  <div class="gallery">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+    <video src="video2.mp4" controls></video>
+  </div>
+
+  <p>Will you be my Valentine forever? 😘</p>
+  <button class="yes" onclick="showSurprise()">YES ❤️</button>
+  <button class="no" id="noButton">NO 😈</button>
+
+  <div id="surprise" class="hidden">
+    <h1>I LOVE YOU SO MUCH HANNI SHAFEERA ❤️</h1>
+    <p>Thank you for being in my life. I promise to keep choosing you every day 💍</p>
+  </div>
+
+  <script>
+    const noButton = document.getElementById("noButton");
+
+    noButton.addEventListener("mouseover", function() {
+      noButton.style.left = Math.random() * window.innerWidth + "px";
+      noButton.style.top = Math.random() * window.innerHeight + "px";
+    });
+
+    function showSurprise() {
+      document.getElementById("surprise").classList.remove("hidden");
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 15 + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
